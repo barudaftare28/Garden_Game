@@ -7,6 +7,7 @@ TagManager:
   - Monster
   - Animal
   - Crop
+  - Object
   layers:
   - Default
   - TransparentFX

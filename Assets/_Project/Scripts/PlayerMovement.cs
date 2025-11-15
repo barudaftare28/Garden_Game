@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool canMove = true; // Variabel untuk mengontrol gerakan
+
     // Var yang bisa diatur di inspector
     public float moveSpeed = 5f;
 
@@ -49,6 +51,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        // JIKA KITA TIDAK BISA BERGERAK (KARENA TERPENTAL), HENTIKAN FUNGSI INI
+        if (!canMove) return;
+
         // --- 4. Menerapkan Gerakan ke Rigidbody (Fisika) ---
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
